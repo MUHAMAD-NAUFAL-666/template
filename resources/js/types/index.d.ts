@@ -1,5 +1,6 @@
 import { LucideIcon } from 'lucide-react';
 import type { Config } from 'ziggy-js';
+import { Switch } from '@/components/ui/switch';
 
 export interface Auth {
     user: User;
