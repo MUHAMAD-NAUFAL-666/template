@@ -2,16 +2,15 @@
 
 import { Head, useForm, router } from '@inertiajs/react';
 import { FormEventHandler, useState } from 'react';
-import { LoaderCircle, Mail, Lock } from 'lucide-react';
+import { LoaderCircle, Mail, Lock, Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useModeAnimation, ThemeAnimationType } from 'react-theme-switch-animation';
+import {useModeAnimation, ThemeAnimationType,} from 'react-theme-switch-animation';
 
 import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Moon, Sun } from 'lucide-react';
 
 type LoginForm = {
     email: string;
@@ -40,8 +39,8 @@ export default function Login({ status, canResetPassword }: LoginProps) {
     } = useModeAnimation({
         animationType: ThemeAnimationType.CIRCLE,
         duration: 800,
-        blurAmount: 4,
-        globalClassName: 'dark',
+        blurAmount: 5,
+        globalClassName: 'dark', // pastikan `dark:` di tailwind berfungsi
     });
 
     const submit: FormEventHandler = (e) => {
@@ -63,20 +62,22 @@ export default function Login({ status, canResetPassword }: LoginProps) {
             <Head title="Login" />
             <div className="absolute inset-0 bg-black/40 backdrop-blur-sm dark:bg-black/70 z-0" />
 
-            {/* Theme toggle button */}
-            <div className="absolute top-4 right-4 z-10">
-                 <button
-        ref={toggleRef}
-        onClick={toggleSwitchTheme}
-        aria-label="Toggle dark mode"
-        className="p-2 rounded-full transition duration-300 hover:rotate-12 bg-white/20 dark:bg-black/30 backdrop-blur shadow"
-    >
-        {isDarkMode ? (
-            <Sun className="h-5 w-5 text-yellow-400" />
-        ) : (
-            <Moon className="h-5 w-5 text-blue-400" />
-        )}
-    </button>
+            {/* Theme toggle */}
+           <div className="absolute top-4 right-4 z-50 pointer-events-auto">
+
+                <button
+  ref={toggleRef}
+  onClick={toggleSwitchTheme}
+  aria-label="Toggle dark mode"
+  className="p-2 rounded-full transition duration-300 hover:rotate-12 bg-white/20 dark:bg-black/30 backdrop-blur shadow"
+>
+
+                    {isDarkMode ? (
+                        <Sun className="h-5 w-5 text-yellow-400" />
+                    ) : (
+                        <Moon className="h-5 w-5 text-blue-400" />
+                    )}
+                </button>
             </div>
 
             <div className="relative z-10 flex min-h-screen items-center justify-center px-4">
@@ -172,7 +173,6 @@ export default function Login({ status, canResetPassword }: LoginProps) {
                         </motion.div>
                     </form>
 
-                    {/* Divider */}
                     <div className="relative my-4">
                         <div className="absolute inset-0 flex items-center">
                             <div className="w-full border-t border-muted" />
@@ -182,7 +182,6 @@ export default function Login({ status, canResetPassword }: LoginProps) {
                         </div>
                     </div>
 
-                    {/* Social login */}
                     <div className="flex flex-col space-y-3">
                         <Button variant="outline" onClick={() => handleOAuth('google')}>
                             <img src="/images/google.svg" alt="Google" className="w-5 h-5 mr-2" />

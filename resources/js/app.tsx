@@ -1,4 +1,6 @@
 import '../css/app.css';
+import { useEffect } from 'react';
+
 
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
@@ -19,6 +21,10 @@ createInertiaApp({
         color: '#4B5563',
     },
 });
+
+useEffect(() => {
+  document.documentElement.classList.add('transition-all'); // untuk animasi
+}, []);
 
 // This will set light / dark mode on load...
 initializeTheme();
