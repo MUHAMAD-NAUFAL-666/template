@@ -19,3 +19,19 @@ Project ini adalah boilerplate modern dengan **Laravel 12+** di sisi backend, **
 ```bash
 git clone https://github.com/MUHAMAD-NAUFAL-666/template.git
 cd template
+
+composer install
+
+bun install
+
+cp .env.example .env
+php artisan key:generate
+
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nama_db
+DB_USERNAME=user_db
+DB_PASSWORD=password_db
+
