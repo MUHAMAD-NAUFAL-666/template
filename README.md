@@ -1,4 +1,4 @@
-# template
+# Template
 
 Project ini adalah boilerplate modern dengan **Laravel 12+** di sisi backend, **React** untuk frontend, dan menggunakan **Bun** sebagai package manager untuk pengembangan yang lebih cepat.
 
@@ -20,18 +20,10 @@ Project ini adalah boilerplate modern dengan **Laravel 12+** di sisi backend, **
 git clone https://github.com/MUHAMAD-NAUFAL-666/template.git
 cd template
 
+
+### 2. Install dependency PHP dan frontend
+
+```bash
 composer install
-
 bun install
-
-cp .env.example .env
-php artisan key:generate
-
-
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=nama_db
-DB_USERNAME=user_db
-DB_PASSWORD=password_db
 
