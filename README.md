@@ -19,11 +19,16 @@ Project ini adalah boilerplate modern dengan **Laravel 12+** di sisi backend, **
 ```bash
 git clone https://github.com/MUHAMAD-NAUFAL-666/template.git
 cd template
-
-
+```
 ### 2. Install dependency PHP dan frontend
-
 ```bash
 composer install
 bun install
+```
+### 3. Salin file .env dan generate key Laravel
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
 
