@@ -39,5 +39,17 @@ bun install
 cp .env.example .env
 php artisan key:generate
 ```
+### 4. Konfigurasi database
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nama_db
+DB_USERNAME=user_db
+DB_PASSWORD=password_db
+```
+### 5. Jalankan migration
+```bash
+php artisan migrate
 
 
