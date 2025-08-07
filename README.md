@@ -1,4 +1,13 @@
-# Template
+<p align="center">
+  <img src="https://laravel.com/img/logomark.min.svg" alt="Laravel" width="80" height="80">
+  &nbsp;&nbsp;
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="80" height="80">
+  &nbsp;&nbsp;
+  <img src="https://bun.sh/logo.svg" alt="Bun" width="80" height="80">
+</p>
+
+
+# Template Pos
 
 Project ini adalah boilerplate modern dengan **Laravel 12+** di sisi backend, **React** untuk frontend, dan menggunakan **Bun** sebagai package manager untuk pengembangan yang lebih cepat.
 
