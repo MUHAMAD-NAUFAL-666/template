@@ -4,7 +4,7 @@ import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid } from 'lucide-react';
+import { AlignVerticalJustifyStart, BookOpen, ChartAreaIcon, DollarSign, Folder, LayoutGrid, Menu, MenuIcon, Table2, TableCellsMerge, TableColumnsSplit, Wallet, Wallet2Icon, WalletMinimalIcon } from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
@@ -12,6 +12,27 @@ const mainNavItems: NavItem[] = [
         title: 'Dashboard',
         href: '/dashboard',
         icon: LayoutGrid,
+
+    },
+    {
+        title: 'Transaksi',
+        href: '/transactions',
+        icon: WalletMinimalIcon,
+    },
+    {
+        title: 'Menu',
+        href: '/menu',
+        icon: MenuIcon ,
+    },
+    {
+        title: 'Meja',
+        href: '/tables',
+        icon: TableCellsMerge,
+    },
+    {
+        title: 'Laporan',
+        href: '/reports',
+        icon: ChartAreaIcon,
     },
 ];
 

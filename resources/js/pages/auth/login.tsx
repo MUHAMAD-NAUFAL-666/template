@@ -184,11 +184,11 @@ export default function Login({ status, canResetPassword }: LoginProps) {
 
                     <div className="flex flex-col space-y-3">
                         <Button variant="outline" onClick={() => handleOAuth('google')}>
-                            <img src="/images/google.svg" alt="Google" className="w-5 h-5 mr-2" />
+                            <img src="storage/images/icons8-google-48.png" alt="Google" className="w-5 h-5 mr-2" />
                             Login with Google
                         </Button>
                         <Button variant="outline" onClick={() => handleOAuth('instagram')}>
-                            <img src="/images/instagram.svg" alt="Instagram" className="w-5 h-5 mr-2" />
+                            <img src="storage/images/icons8-instagram-48.png" alt="Instagram" className="w-5 h-5 mr-2" />
                             Login with Instagram
                         </Button>
                     </div>
