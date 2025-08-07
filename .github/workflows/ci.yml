@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: testing_db
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, bcmath, mysql
+          coverage: none
+
+      - name: Setup Node (for Bun)
+        uses: oven-sh/setup-bun@v1
+
+      - name: Copy .env
+        run: cp .env.example .env
+
+      - name: Install PHP dependencies
+        run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - name: Install frontend dependencies with Bun
+        run: bun install
+
+      - name: Generate Laravel key
+        run: php artisan key:generate
+
+      - name: Run Laravel migrations
+        env:
+          DB_CONNECTION: mysql
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
+          DB_DATABASE: testing_db
+          DB_USERNAME: root
+          DB_PASSWORD: root
+        run: php artisan migrate
+
+      - name: Run Laravel tests
+        env:
+          DB_CONNECTION: mysql
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
+          DB_DATABASE: testing_db
+          DB_USERNAME: root
+          DB_PASSWORD: root
+        run: php artisan test
+
+      - name: Build React frontend
+        run: bun run build
