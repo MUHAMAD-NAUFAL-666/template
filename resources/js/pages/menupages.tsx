@@ -13,26 +13,57 @@ const menus = [
     name: 'Ayam Geprek',
     price: 25000,
     available: true,
-    image: '/images/ayam-geprek.jpg',
+    image: 'storage/images/ayamgeprek.jpg',
   },
   {
     name: 'Nasi Goreng',
     price: 20000,
     available: true,
-    image: '/images/nasi-goreng.jpg',
+    image: 'storage/images/nasigoreng.jpeg',
   },
   {
-    name: 'Mie Ayam',
-    price: 18000,
+    name: 'Beef Steak',
+    price: 68000,
     available: false,
-    image: '/images/mie-ayam.jpg',
+    image: 'storage/images/beefsteak.jpg',
+  },
+  {
+    name: 'double beef chicken',
+    price: 60000,
+    available: true,
+    image: 'storage/images/chicken.jpeg',
   },
   {
     name: 'Es Teh Manis',
+    price: 8000,
+    available: true,
+    image: 'storage/images/esteh.jpeg',
+  },
+  {
+    name: 'Kopi Susu',
+    price: 25000,
+    available: true,
+    image: 'storage/images/kopsus.jpg',
+  },
+  {
+    name: 'Soda Gembira',
+    price: 12000,
+    available: false,
+    image: 'storage/images/sodagembira.jpg',
+  },
+  {
+    name: 'Air Mineral',
     price: 5000,
     available: true,
-    image: '/images/es-teh.jpg',
+    image: 'storage/images/airmineral.jpeg',
   },
+  {
+    name: 'Ayam Penyet',
+    price: 30000,
+    available: true,
+    image: 'storage/images/ayampenyet.jpeg',
+  },
+
 ];
 
 const MenuPage = () => {

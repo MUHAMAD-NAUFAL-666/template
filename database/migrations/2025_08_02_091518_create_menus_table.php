@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('stok');
             $table->string("gambar");
             $table->enum('ukuran', ['kecil', 'sedang', 'besar'])->default('besar'); // Tambahkan kolom status()
-            $table->enum('status',["tersedia,tidak tersedia"]);
+$table->enum('status', ['tersedia', 'tidak tersedia']);
             $table->timestamps();
 
             $table->foreign('kategori_id')->references('id_kategori')->on('kategoris')->onDelete('cascade');
