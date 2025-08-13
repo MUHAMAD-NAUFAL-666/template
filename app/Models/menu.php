@@ -19,4 +19,13 @@ class Menu extends Model
         'ukuran',
         'status',
     ];
+
+
+    // Biar frontend tetap bisa akses $menu->id
+    protected $appends = ['id'];
+
+    public function getIdAttribute()
+    {
+        return $this->attributes['id_menu'];
+    }
 }
