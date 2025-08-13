@@ -63,4 +63,9 @@ php artisan serve
 bun run dev
 ```
 
+### 8. Jangan Lupa Collab Guys!!!
+```bash
+GASSSSSSS
+```
+
 
