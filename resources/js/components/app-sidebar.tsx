@@ -26,7 +26,7 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Meja',
-        href: '/tables',
+        href: '/meja',
         icon: TableCellsMerge,
     },
     {
