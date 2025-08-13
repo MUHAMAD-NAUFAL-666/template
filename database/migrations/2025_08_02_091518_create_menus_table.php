@@ -15,17 +15,17 @@ return new class extends Migration
             $table->id("id_menu");
             $table->string('nama_menu');
             $table->text('deskripsi');
-            $table->unsignedBigInteger('kategori_id');
+            $table->unsignedBigInteger('kategori_id')->nullable();
             $table->decimal('harga', 10, 2);
             $table->integer('stok');
             $table->string("gambar");
             $table->enum('ukuran', ['kecil', 'sedang', 'besar'])->default('besar'); // Tambahkan kolom status()
-$table->enum('status', ['tersedia', 'tidak tersedia']);
+            $table->enum('status', ['tersedia', 'tidak tersedia'])->default('tersedia');
             $table->timestamps();
 
             $table->foreign('kategori_id')->references('id_kategori')->on('kategoris')->onDelete('cascade');
         });
-    }
+    }   
 
     /**
      * Reverse the migrations.

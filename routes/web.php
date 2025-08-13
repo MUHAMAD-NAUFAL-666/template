@@ -12,19 +12,22 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
-    
 
-    Route::prefix('admin')->name('admin.')->group(function () {
-        Route::get('/menu', [MenuController::class, 'index'])->name('menu.index');
-        Route::get('/menu/create', [MenuController::class, 'create'])->name('menu.create');
-        Route::post('/menu', [MenuController::class, 'store'])->name('menu.store');
-        Route::get('/menu/{id}/edit', [MenuController::class, 'edit'])->name('menu.edit');
-        Route::put('/menu/{id}', [MenuController::class, 'update'])->name('menu.update');
-        Route::delete('/menu/{id}', [MenuController::class, 'destroy'])->name('menu.destroy');
+
+    Route::inertia('/menu', 'menupages')->name('menu');
+    Route::get('/menu', [MenuController::class, 'index'])->name('admin.menu.index');
+
+    Route::prefix('admin/menu')->name('admin.menu.')->group(function () {
+        Route::get('/', [MenuController::class, 'index'])->name('index');
+        Route::get('/create', [MenuController::class, 'create'])->name('create');
+        Route::post('/', [MenuController::class, 'store'])->name('store');
+        Route::get('/{id}/edit', [MenuController::class, 'edit'])->name('edit');
+        Route::put('/{id}', [MenuController::class, 'update'])->name('update');
+        Route::delete('/{id}', [MenuController::class, 'destroy'])->name('destroy');
     });
 });
 
 
-require __DIR__.'/settings.php';
+require __DIR__ . '/settings.php';
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

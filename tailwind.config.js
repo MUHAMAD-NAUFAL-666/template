@@ -1,10 +1,12 @@
 // tailwind.config.js
-module.exports = {
-  darkMode: 'class', // <== WAJIB ADA INI
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: 'class',
   content: [
+    // Correct paths for Laravel, including Blade, Vue, React, and Livewire files
+    './app/View/**/*.php',
+    './resources/views/**/*.blade.php',
     './resources/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {},
