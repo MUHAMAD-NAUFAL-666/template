@@ -14,8 +14,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
 
-Route::get('/meja', [MejaController::class, 'index'])->name('meja');    
-
+Route::get('/meja', [MejaController::class, 'index'])->name('meja');
+Route::post('/meja', [MejaController::class, 'store']);
+Route::delete('/meja/{id}', [MejaController::class, 'destroy']);
     Route::inertia('/menu', 'menupages')->name('menu');
     Route::get('/menu', [MenuController::class, 'index'])->name('admin.menu.index');
 
