@@ -51,5 +51,16 @@ DB_PASSWORD=password_db
 ### 5. Jalankan migration
 ```bash
 php artisan migrate
+```
+
+### 6. Jalankan Backend Laravel
+```bash
+php artisan serve
+```
+
+### 7. Jalankan Fe (React +vite)
+```bash
+bun run dev
+```
 
 
